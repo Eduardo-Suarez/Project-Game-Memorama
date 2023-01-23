@@ -12,9 +12,9 @@ body{
 
 main{
     border: 1px solid black;
-    margin: 30px auto;
+    width: 730px;
+    margin: 80px auto 40px;
     display: flex;
-    padding-left: 1.5rem;
     align-items: center;
 }
 
@@ -27,6 +27,11 @@ main{
 h1{
     text-align: center;
     padding-bottom: 3rem;
+}
+
+h2{
+    font-size: 20px;
+    color: white;
 }
 
 button{
@@ -45,13 +50,28 @@ button:hover{
     cursor: pointer;
 }
 
-footer{
-    text-align: center;
-    margin-top: 5rem;
-}
-
 .section2{
     background-color: #FF8787;
-    width: 250px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 270px;
     height: 400px;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.estadisticas{
+    border: 1px solid white;
+    height: 105px;
+    border-radius: 8px;
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
+
+footer{
+    text-align: center;
+    text-decoration: none;
+    margin-top: 5rem;
 }
