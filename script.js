@@ -1,4 +1,4 @@
-//Variables
+//Iniciacion de Variables
 let uncapCards = 0;
 let card1 = null;
 let card2 = null;
@@ -50,8 +50,9 @@ function uncap (id){
         moves++;
         showMoves.innerHTML = `Movimientos: ${moves}`;
 
+        //Con este if hacemos la comparacion y si son iguales aumentamos el contador de aciertos.
         if(firstResult === secondResult){
-
+            //Contador de tarjetas destapadas
             uncapCards = 0;
 
             //Aumentar aciertos
