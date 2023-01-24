@@ -9,7 +9,7 @@ let hits = 0;
 let tempo = false;
 let timer = 30;
 let initTime = 30;
-let timeId = null;
+let timeId = undefined;
 
 
 
@@ -18,6 +18,21 @@ let showMoves = document.getElementById('movimiento');
 let showHits = document.getElementById('aciertos');
 let showTime = document.getElementById('tiempo-restante');
 let result = document.getElementById('resultado');
+let btn = document.getElementsByClassName('btn')
+
+result.innerHTML = 'Presiona enter para iniciar el juego';
+
+document.addEventListener('keypress', function (event) {
+    if (event.key === 'Enter'){
+        alert('el juego a comenzado')
+        result.innerHTML = ''
+        
+    }else{
+        alert(`Debes de prsionar la tecla "Enter" para comenzar`)
+        
+
+    }
+})
 
 
 //Generacion de numeros aleatorios
@@ -31,6 +46,11 @@ numbers = numbers.sort(() => {
 console.log(numbers)
 
 //Funciones
+function startGame () {
+    
+}
+
+
 function countTime (){
     //Establece el contador hacia atras.
     timeId = setInterval(() => {
@@ -42,7 +62,8 @@ function countTime (){
         if(timer === 0 && moves !== 8){
             clearInterval(timeId);
             blockCards();
-            result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos. `
+            result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos. Presiona 'Enter' para reiniciar`
+           
         }
     },1000)
 }
@@ -54,7 +75,7 @@ function blockCards(){
         
         let blockCard = document.getElementById(i)
         //imprime en pantalla el valor correspondiente.
-        blockCard.innerHTML = numbers[i];
+        blockCard.innerHTML = `<img src="./images/${numbers[i]}.png">`;
         blockCard.disabled = true;
     }
 }
@@ -64,7 +85,7 @@ function uncap (id){
 
     if(tempo === false){
 
-        countTime();
+        countTime()
         tempo = true
     }
 
@@ -75,7 +96,7 @@ function uncap (id){
         //mostrar el primer numero
         card1 = document.getElementById(id)
         firstResult = numbers[id]
-        card1.innerHTML = `<img src="/images/${firstResult}.png" alt="image"`;
+        card1.innerHTML = `<img src="./images/${firstResult}.png" >`;
 
         //Desabilitar primer boton
         card1.disabled  = true
@@ -83,7 +104,7 @@ function uncap (id){
         //mostrar segundo numero
         card2 = document.getElementById(id);
         secondResult = numbers[id];
-        card2.innerHTML = secondResult;
+        card2.innerHTML = `<img src = "/images/${secondResult}.png">`;
 
         //Desabilitar el segundo boton
         card2.disabled = true
