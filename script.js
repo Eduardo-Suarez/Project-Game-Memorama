@@ -75,7 +75,7 @@ function uncap (id){
         //mostrar el primer numero
         card1 = document.getElementById(id)
         firstResult = numbers[id]
-        card1.innerHTML = `<img src="/images/${firstResult}" alt="image"`;
+        card1.innerHTML = `<img src="/images/${firstResult}.png" alt="image"`;
 
         //Desabilitar primer boton
         card1.disabled  = true
