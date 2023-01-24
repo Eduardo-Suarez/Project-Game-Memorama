@@ -7,7 +7,8 @@
 body{
 
     font-family: helvetica;
-    background-color: #579BB1;
+    background: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+    color: azure;
 }
 
 main{
@@ -19,14 +20,14 @@ main{
 }
 
 .section1{
-    background-color: #277BC0;
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 0 10px 10px 10px;
     border-radius: 8px;
 }
 
 h1{
     text-align: center;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
 }
 
 h2{
@@ -35,15 +36,14 @@ h2{
 }
 
 button{
-    height: 100px;
-    width: 100px;
+    height: 130px;
+    width: 130px;
     margin: .5rem;
-    text-align: center;
     font-size: 40px;
     color: black;
     font-weight: bold;
     border-radius: 15px;
-    background-color: #E1D7C6;
+    
 }
 
 button:hover{
@@ -51,7 +51,7 @@ button:hover{
 }
 
 .section2{
-    background-color: #FF8787;
+    background-color: rgba(255, 255, 255, 0.2);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     width: 270px;
@@ -73,5 +73,18 @@ button:hover{
 footer{
     text-align: center;
     text-decoration: none;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
+
+#resultado{
+    text-align: center;
+    font-size: 1.5rem;
+    padding: .5rem;
+}
+
+img{
+    width: 80%;
+}
+
+
+
