@@ -1,7 +1,7 @@
 html {
     --s: 100px; /* control the size */
-    --c1: #6AE4BD;
-    --c2: white;
+    --c1: #e0bd31;
+    --c2: #d8d6d6;
     
     --_s: calc(2*var(--s)) calc(2*var(--s));
     --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
@@ -55,9 +55,10 @@ html {
 
   body{
     font-family: 'Press Start 2P';
+    font-size: 30px;
     text-align: center;
     margin-top: 7rem;
-    color: #0B6FE4;
+    color: #000000;
   }
 
   .botones{
@@ -71,7 +72,7 @@ html {
     border-radius: 10px;
     padding: 1.5rem;
     font-size: 17px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
 
@@ -87,7 +88,7 @@ html {
 }
 
 .button.type3 {
-  color: #435a6b;
+  color: #000000;
 }
 .button.type3.type3::after, .button.type3.type3::before {
   content: "";

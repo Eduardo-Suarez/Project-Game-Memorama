@@ -11,12 +11,14 @@ let timer = 30;
 let initTime = 30;
 let timeId = undefined;
 
+
 //SONIDOS
 let winAudio = new Audio('/Juego-poke/sounds/win.wav');
 let loseAudio = new Audio('/Juego-poke/sounds/lose.wav');
 let clickAudio = new Audio('/Juego-poke/sounds/click.wav');
 let rightAudio = new Audio('/Juego-poke/sounds/right.wav');
 let wrongAudio = new Audio('/Juego-poke/sounds/wrong.wav');
+
 
 
 
@@ -28,6 +30,9 @@ let result = document.getElementById('resultado');
 let btn = document.getElementsByClassName('btn')
 let message = document.getElementById('mensaje');
 let menu = document.getElementById('menu');
+let audio = document.getElementById('music');
+audio.volume = 0.1
+
 
 mensaje.innerHTML = 'Da click sobre un recuadro para comenzar';
 
@@ -38,6 +43,16 @@ document.addEventListener('click', function () {
     
 })
 
+document.getElementById('volumen').addEventListener('click', function (){
+    if(audio.paused){
+        audio.play()
+        
+    }else{
+        audio.pause()
+    }
+})
+
+audio.play();
 
 //Generacion de numeros aleatorios
 //queremos que regrese un arreglo numeros aleatorios del -0.5 al 0.5.

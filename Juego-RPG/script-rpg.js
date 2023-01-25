@@ -28,6 +28,8 @@ let result = document.getElementById('resultado');
 let btn = document.getElementsByClassName('btn')
 let message = document.getElementById('mensaje');
 let menu = document.getElementById('menu');
+let audio = document.getElementById('music');
+audio.volume = 0.1
 
 mensaje.innerHTML = 'Da click sobre un recuadro para comenzar';
 
@@ -37,6 +39,17 @@ document.addEventListener('click', function () {
   },3000)
     
 })
+
+document.getElementById('volumen').addEventListener('click', function (){
+    if(audio.paused){
+        audio.play()
+        
+    }else{
+        audio.pause()
+    }
+})
+
+audio.play();
 
 
 //Generacion de numeros aleatorios
