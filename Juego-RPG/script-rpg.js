@@ -27,6 +27,7 @@ let showTime = document.getElementById('tiempo-restante');
 let result = document.getElementById('resultado');
 let btn = document.getElementsByClassName('btn')
 let message = document.getElementById('mensaje');
+let menu = document.getElementById('menu');
 
 mensaje.innerHTML = 'Da click sobre un recuadro para comenzar';
 
@@ -62,6 +63,9 @@ function countTime (){
             blockCards();
             loseAudio.play();
             result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos.`
+            menu.addEventListener('click', function (){
+                window.location.href = '/inicio/index.html'
+            });
            
         }
     },1000)
@@ -130,6 +134,9 @@ function uncap (id){
                 showTime.innerHTML = `Demoraste ${initTime - timer} segundos`
                 showMoves.innerHTML = `Te tomo ${moves} movimientos`
                 result.innerHTML = `GANASTE!! en ${initTime - timer} segundos y ${moves} movimientos `
+                menu.addEventListener('click', function (){
+                    window.location.href = '/inicio/index.html'
+                });
             }
 
             
