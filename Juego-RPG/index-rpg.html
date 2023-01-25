@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Juego-RPG/style-rpg.css">
+    <title>Memorama Game RPG</title>
+</head>
+<body>
+
+    <main>
+
+        <section class="section1">
+            <h1>JUEGO DE MEMORIA RPG</h1>
+
+            <h2 id="resultado"></h2>
+            <h2 id="mensaje"></h2>
+
+            <audio id="audio" src=""></audio>
+
+            <table>
+                <tr>
+                    <td><button id="0" class="btn" onclick="uncap(0)" ></button></td>
+                    <td><button id="1" class="btn" onclick="uncap(1)" ></button></td>
+                    <td><button id="2" class="btn" onclick="uncap(2)" ></button></td>
+                    <td><button id="3" class="btn" onclick="uncap(3)" ></button></td>
+ 
+                </tr>
+
+                <tr>
+                    <td><button id="4" class="btn" onclick="uncap(4)"></button></td>
+                    <td><button id="5" class="btn" onclick="uncap(5)"></button></td>
+                    <td><button id="6" class="btn" onclick="uncap(6)"></button></td>
+                    <td><button id="7" class="btn" onclick="uncap(7)"></button></td>
+                    
+ 
+                </tr>
+                
+                
+                <tr>
+                    <td><button id="8"  class="btn" onclick="uncap(8)"></button></td>
+                    <td><button id="9"  class="btn" onclick="uncap(9)"></button></td>
+                    <td><button id="10" class="btn" onclick="uncap(10)"></button></td>
+                    <td><button id="11" class="btn" onclick="uncap(11)"></button></td>
+ 
+                </tr>
+                
+                <tr>
+                    <td><button id="12" class="btn" onclick="uncap(12)"></button></td>
+                    <td><button id="13" class="btn" onclick="uncap(13)"></button></td>
+                    <td><button id="14" class="btn" onclick="uncap(14)"></button></td>
+                    <td><button id="15" class="btn" onclick="uncap(15)"></button></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="section2">
+
+            <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
+            <h2 id="tiempo-restante" class="estadisticas">Tiempo: segundos</h2>
+            <h2 id="movimiento" class="estadisticas">Movimiento: 0</h2>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Juego programado por: 👉 Eduardo Suarez 👾
+        </p>
+    </footer>
+
+    <script src="/Juego-RPG/script-rpg.js"></script>
+    
+</body>
+</html>

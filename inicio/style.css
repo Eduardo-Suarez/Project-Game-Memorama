@@ -1,0 +1,213 @@
+html {
+    --s: 100px; /* control the size */
+    --c1: #6AE4BD;
+    --c2: white;
+    
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
+    --_p: var(--_s) conic-gradient(at 20% 20%,#0000 75%,var(--c2) 0);
+    background:
+      calc( .9*var(--s)) calc( .9*var(--s))/var(--_p),
+      calc(-.1*var(--s)) calc(-.1*var(--s))/var(--_p),
+      calc( .7*var(--s)) calc( .7*var(--s))/var(--_g),
+      calc(-.3*var(--s)) calc(-.3*var(--s))/var(--_g),
+      conic-gradient(from 90deg at 20% 20%,var(--c2) 25%,var(--c1) 0) 
+       0 0/var(--s) var(--s);
+    animation: m 3s infinite;
+  }
+  @keyframes m {
+    0% {
+     background-position: 
+      calc( .9*var(--s)) calc( .9*var(--s)),
+      calc(-.1*var(--s)) calc(-.1*var(--s)),
+      calc( .7*var(--s)) calc( .7*var(--s)),
+      calc(-.3*var(--s)) calc(-.3*var(--s)),0 0
+    }
+    25% {
+     background-position: 
+      calc(1.9*var(--s)) calc( .9*var(--s)),
+      calc(-1.1*var(--s)) calc(-.1*var(--s)),
+      calc(1.7*var(--s)) calc( .7*var(--s)),
+      calc(-1.3*var(--s)) calc(-.3*var(--s)),0 0
+    }
+    50% {
+     background-position: 
+      calc(1.9*var(--s)) calc(-.1*var(--s)),
+      calc(-1.1*var(--s)) calc( .9*var(--s)),
+      calc(1.7*var(--s)) calc(-.3*var(--s)),
+      calc(-1.3*var(--s)) calc( .7*var(--s)),0 0
+    }
+    75% {
+     background-position: 
+      calc(2.9*var(--s)) calc(-.1*var(--s)),
+      calc(-2.1*var(--s)) calc( .9*var(--s)),
+      calc(2.7*var(--s)) calc(-.3*var(--s)),
+      calc(-2.3*var(--s)) calc( .7*var(--s)),0 0
+    }
+    100% {
+     background-position: 
+      calc(2.9*var(--s)) calc(-1.1*var(--s)),
+      calc(-2.1*var(--s)) calc(1.9*var(--s)),
+      calc(2.7*var(--s)) calc(-1.3*var(--s)),
+      calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
+    }
+  }
+
+  body{
+    font-family: 'Press Start 2P';
+    text-align: center;
+    margin-top: 7rem;
+    color: #0B6FE4;
+  }
+
+  .botones{
+    width: 100vw;
+    justify-content: space-evenly;
+    padding-top: 10rem;
+    display: flex;
+  }
+
+  button{
+    border-radius: 10px;
+    padding: 1.5rem;
+    font-size: 17px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+}
+.copyright a {
+  text-decoration: none;
+  color: #16a085;
+}
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
+}
+.button.type1 {
+  color: #566473;
+}
+.button.type1.type1::after, .button.type1.type1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+}
+.button.type1.type1::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #566473;
+  border-right-color: #566473;
+}
+.button.type1.type1::before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #566473;
+  border-left-color: #566473;
+}
+.button.type1.type1:hover:after, .button.type1.type1:hover:before {
+  width: 100%;
+  height: 100%;
+}
+.button.type2 {
+  color: #16a085;
+}
+.button.type2.type2:after, .button.type2.type2:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #16a085;
+  transition: all 0.3s ease;
+  transform: scale(0.85);
+}
+.button.type2.type2:hover:before {
+  top: 0;
+  transform: scale(1);
+}
+.button.type2.type2:hover:after {
+  transform: scale(1);
+}
+.button.type3 {
+  color: #435a6b;
+}
+.button.type3.type3::after, .button.type3.type3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+}
+.button.type3.type3::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #000000;
+  border-right-color: #000000;
+}
+.button.type3.type3::before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #000000;
+  border-left-color: #000000;
+}
+.button.type3.type3:hover:after, .button.type3.type3:hover:before {
+  border-bottom-color: #000000;
+  border-right-color: #000000;
+  border-top-color: #000000;
+  border-left-color: #000000;
+  width: 100%;
+  height: 100%;
+}
+.button.type4 {
+  color: red;
+}
+.button.type4::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  background-color: red;
+  transition: width 0.3s ease-in-out;
+}
+.button.type4::after {
+  bottom: 0;
+}
+.button.type4:hover::after {
+  width: 50px;
+}
+
+
+  

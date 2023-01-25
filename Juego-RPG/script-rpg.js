@@ -11,6 +11,13 @@ let timer = 30;
 let initTime = 30;
 let timeId = undefined;
 
+//SONIDOS
+let winAudio = new Audio('/Juego-RPG/sounds/win.wav');
+let loseAudio = new Audio('/Juego-RPG/sounds/lose.wav');
+let clickAudio = new Audio('/Juego-RPG/sounds/click.wav');
+let rightAudio = new Audio('/Juego-RPG/sounds/right.wav');
+let wrongAudio = new Audio('/Juego-RPG/sounds/wrong.wav');
+
 
 
 //Apuntando al html
@@ -19,19 +26,15 @@ let showHits = document.getElementById('aciertos');
 let showTime = document.getElementById('tiempo-restante');
 let result = document.getElementById('resultado');
 let btn = document.getElementsByClassName('btn')
+let message = document.getElementById('mensaje');
 
-result.innerHTML = 'Presiona enter para iniciar el juego';
+mensaje.innerHTML = 'Da click sobre un recuadro para comenzar';
 
-document.addEventListener('keypress', function (event) {
-    if (event.key === 'Enter'){
-        alert('el juego a comenzado')
-        result.innerHTML = ''
-        
-    }else{
-        alert(`Debes de prsionar la tecla "Enter" para comenzar`)
-        
-
-    }
+document.addEventListener('click', function () {
+  setTimeout(() =>{
+    mensaje.innerHTML = '';
+  },3000)
+    
 })
 
 
@@ -46,11 +49,6 @@ numbers = numbers.sort(() => {
 console.log(numbers)
 
 //Funciones
-function startGame () {
-    
-}
-
-
 function countTime (){
     //Establece el contador hacia atras.
     timeId = setInterval(() => {
@@ -62,7 +60,8 @@ function countTime (){
         if(timer === 0 && moves !== 8){
             clearInterval(timeId);
             blockCards();
-            result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos. Presiona 'Enter' para reiniciar`
+            loseAudio.play();
+            result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos.`
            
         }
     },1000)
@@ -75,7 +74,7 @@ function blockCards(){
         
         let blockCard = document.getElementById(i)
         //imprime en pantalla el valor correspondiente.
-        blockCard.innerHTML = `<img src="./images/${numbers[i]}.png">`;
+        blockCard.innerHTML = `<img src="/Juego-RPG/images/${numbers[i]}.png">`;
         blockCard.disabled = true;
     }
 }
@@ -96,7 +95,8 @@ function uncap (id){
         //mostrar el primer numero
         card1 = document.getElementById(id)
         firstResult = numbers[id]
-        card1.innerHTML = `<img src="./images/${firstResult}.png" >`;
+        card1.innerHTML = `<img src="/Juego-RPG/images/${firstResult}.png" >`;
+        clickAudio.play();
 
         //Desabilitar primer boton
         card1.disabled  = true
@@ -104,7 +104,7 @@ function uncap (id){
         //mostrar segundo numero
         card2 = document.getElementById(id);
         secondResult = numbers[id];
-        card2.innerHTML = `<img src = "/images/${secondResult}.png">`;
+        card2.innerHTML = `<img src = "/Juego-RPG/images/${secondResult}.png">`;
 
         //Desabilitar el segundo boton
         card2.disabled = true
@@ -120,9 +120,11 @@ function uncap (id){
 
             //Aumentar aciertos
             hits++
-            showHits.innerHTML = `Aciertos ${hits}`
+            showHits.innerHTML = `Aciertos ${hits}`;
+            rightAudio.play();
 
             if(hits === 8 && timer > 0){
+                winAudio.play();
                 clearInterval(timeId);
                 showHits.innerHTML = `Genial, tuviste: ${hits} aciertos`
                 showTime.innerHTML = `Demoraste ${initTime - timer} segundos`
@@ -132,6 +134,7 @@ function uncap (id){
 
             
         }else{
+            wrongAudio.play();
             //Mostrar momentaneamente las cartas y que se vuelvan a tapar despues de un tiempo.
             setTimeout(() => {
                 card1.innerHTML = '';
