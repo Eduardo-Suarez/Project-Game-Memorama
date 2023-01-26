@@ -13,11 +13,11 @@ let timeId = undefined;
 
 
 //SONIDOS
-let winAudio = new Audio('./Juego-poke/sounds/win.wav');
-let loseAudio = new Audio('./Juego-poke/sounds/lose.wav');
-let clickAudio = new Audio('./Juego-poke/sounds/click.wav');
-let rightAudio = new Audio('./Juego-poke/sounds/right.wav');
-let wrongAudio = new Audio('./Juego-poke/sounds/wrong.wav');
+let winAudio = new Audio('./sounds/win.wav');
+let loseAudio = new Audio('./sounds/lose.wav');
+let clickAudio = new Audio('./sounds/click.wav');
+let rightAudio = new Audio('./sounds/right.wav');
+let wrongAudio = new Audio('./sounds/wrong.wav');
 
 
 
@@ -79,7 +79,7 @@ function countTime (){
             loseAudio.play();
             result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos.`
             menu.addEventListener('click', function (){
-                window.location.href = './index.html'
+                window.location.href = '../index.html'
             });
            
         }
@@ -93,7 +93,7 @@ function blockCards(){
         
         let blockCard = document.getElementById(i)
         //imprime en pantalla el valor correspondiente.
-        blockCard.innerHTML = `<img src="./Juego-poke/images/${numbers[i]}.png">`;
+        blockCard.innerHTML = `<img src="./images/${numbers[i]}.png">`;
         blockCard.disabled = true;
     }
 }
@@ -114,7 +114,7 @@ function uncap (id){
         //mostrar el primer numero
         card1 = document.getElementById(id)
         firstResult = numbers[id]
-        card1.innerHTML = `<img src="./Juego-poke/images/${firstResult}.png" >`;
+        card1.innerHTML = `<img src="./images/${firstResult}.png" >`;
         clickAudio.play();
 
         //Desabilitar primer boton
@@ -123,7 +123,7 @@ function uncap (id){
         //mostrar segundo numero
         card2 = document.getElementById(id);
         secondResult = numbers[id];
-        card2.innerHTML = `<img src = "./Juego-poke/images/${secondResult}.png">`;
+        card2.innerHTML = `<img src = "./images/${secondResult}.png">`;
 
         //Desabilitar el segundo boton
         card2.disabled = true
@@ -150,7 +150,7 @@ function uncap (id){
                 showMoves.innerHTML = `Te tomo ${moves} movimientos`
                 result.innerHTML = `GANASTE!! en ${initTime - timer} segundos y ${moves} movimientos `;
                 menu.addEventListener('click', function (){
-                    window.location.href = './index.html'
+                    window.location.href = '../index.html'
                 });
             }
 
