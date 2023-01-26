@@ -79,7 +79,7 @@ function countTime (){
             loseAudio.play();
             result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos.`
             menu.addEventListener('click', function (){
-                window.location.href = '/inicio/index.html'
+                window.location.href = '../index.html'
             });
            
         }
@@ -150,7 +150,7 @@ function uncap (id){
                 showMoves.innerHTML = `Te tomo ${moves} movimientos`
                 result.innerHTML = `GANASTE!! en ${initTime - timer} segundos y ${moves} movimientos `;
                 menu.addEventListener('click', function (){
-                    window.location.href = '/inicio/index.html'
+                    window.location.href = '../index.html'
                 });
             }
 
