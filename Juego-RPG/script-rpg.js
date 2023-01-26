@@ -66,15 +66,15 @@ console.log(numbers)
 function countTime (){
     //Establece el contador hacia atras.
     timeId = setInterval(() => {
-        timer--;
+        timer--
 
         showTime.innerHTML = `Tiempo: ${timer} segundos`
         //Comprueba si el contador a llegado a 0 y detiene el contador
         //Comprueba si el jugador perdio y manda el correspondiente mensaje.
         if(timer === 0 && moves !== 8){
-            clearInterval(timeId);
-            blockCards();
-            loseAudio.play();
+            clearInterval(timeId)
+            blockCards()
+            loseAudio.play()
             result.innerHTML = `Muy lento PERDISTE!!, lograste ${hits} aciertos en ${moves} movimientos.`
             menu.addEventListener('click', function (){
                 window.location.href = '../index.html'
